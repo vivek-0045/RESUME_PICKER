@@ -19,7 +19,6 @@ cloudpathlib==0.21.0
 clr_loader==0.2.7.post0
 clyent==1.2.1
 comtypes==1.4.6
-conda-repo-cli==1.0.75
 conda-verify==3.4.2
 confection==0.1.5
 constantly==15.1.0
