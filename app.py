@@ -10,8 +10,8 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-AWS_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY")
-AWS_SECRET_KEY = os.getenv("AWS_SECRET_KEY")
+AWS_ACCESS_KEY = os.environ.get("AWS_ACCESS_KEY")
+AWS_SECRET_KEY = os.environ.get("AWS_SECRET_KEY")
 BUCKET_NAME = "resumestorer12"
 REGION =  "ap-south-1"
 
