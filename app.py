@@ -21,12 +21,12 @@ app = Flask(__name__)
 s3 = boto3.client("s3", aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
 
 def extract_text_from_pdf(pdf_bytes):
-    """Extracts text from a PDF file directly from memory."""
+    """Extracts text from a PDF file efficiently."""
     text = ""
     try:
         reader = PyPDF2.PdfReader(BytesIO(pdf_bytes))
-        for page in reader.pages:
-            page_text = page.extract_text()
+        for page_num in range(min(5, len(reader.pages))):  # Limits to first 5 pages
+            page_text = reader.pages[page_num].extract_text()
             if page_text:
                 text += page_text + "\n"
     except Exception as e:
